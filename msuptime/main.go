@@ -77,9 +77,10 @@ func (ms *MsUptime) httpGetUptime(w http.ResponseWriter, r *http.Request) (statu
 	clientID := r.Header.Get("cid")
 	status = http.StatusOK
 	response := NewUptimeResponse("OK", ms)
-	w.Header().Set("Content-Type", "application/json; charset=utf-8")
-	w.Header().Set("cid", ms.GetName())
-	w.Header().Set("version", ms.GetVersion())
+	ms.SetResponseHeaders("application/json; charset=utf-8", w, r)
+	// w.Header().Set("Content-Type", "application/json; charset=utf-8")
+	// w.Header().Set("cid", ms.GetName())
+	// w.Header().Set("version", ms.GetVersion())
 	w.WriteHeader(status)
 	contentLen = ms.Reply(w, response)
 	if ms.db != nil {
