@@ -3,7 +3,7 @@ package msuptime
 import (
 	"time"
 
-	"com.gft.tsbo-training.src.go/common/ms-framework/microservice"
+	"github.com/com-gft-tsbo-source/go-common/ms-framework/microservice"
 )
 
 // ###########################################################################

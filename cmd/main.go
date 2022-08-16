@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	msuptime "com.gft.tsbo-training.src.go/ms-uptime/msuptime"
+	msuptime "github.com/com-gft-tsbo-source/go-ms-uptime/msuptime"
 )
 
 // ###########################################################################

@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"com.gft.tsbo-training.src.go/common/ms-framework/microservice"
-	"com.gft.tsbo-training.src.go/ms-uptime/database"
+	"github.com/com-gft-tsbo-source/go-common/ms-framework/microservice"
+	"github.com/com-gft-tsbo-source/go-ms-uptime/database"
 )
 
 // ###########################################################################
@@ -83,7 +83,7 @@ func (ms *MsUptime) httpGetUptime(w http.ResponseWriter, r *http.Request) (statu
 	if ms.db != nil {
 		now := time.Now()
 		ms.db.MarkUptime(ms.getStarttime(), now)
-		msg = fmt.Sprintf("Up: %6ds | cid: %-8.8s | db: %s", response.Uptime, clientID, ms.Name)
+		msg = fmt.Sprintf("Up: %6ds | cid: %-8.8s | db: %s", response.Uptime, clientID, ms.GetName())
 	} else {
 		msg = fmt.Sprintf("Up: %6ds | cid: %-8.8s | db: ----", response.Uptime, clientID)
 	}
