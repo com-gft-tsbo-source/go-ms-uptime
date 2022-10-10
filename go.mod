@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/boltdb/bolt v1.3.1
-	github.com/com-gft-tsbo-source/go-common v0.0.2
+	github.com/com-gft-tsbo-source/go-common v0.0.3
 )
 
 require (
